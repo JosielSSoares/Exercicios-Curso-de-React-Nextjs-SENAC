@@ -1,7 +1,7 @@
 export default function MenuVertical(){
   return (
-    <div className="flex space-x-4">
-        <header className= "text-white bg-blue-400 rounded-t-sm w-35 h-screen">
+    <div className="flex space-x-4 font-mono">
+        <header className= "text-white bg-blue-400 rounded-t-sm w-36 h-screen">
         <div className=" grid justify-items-start">
           <div className="p-3 hover:text-gray-400 font-bold">Menu</div>
           <div className="p-3 hover:text-gray-400">Início</div>
