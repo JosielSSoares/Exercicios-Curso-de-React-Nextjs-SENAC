@@ -1,4 +1,4 @@
-import MenuHorizontal from "@/componentes/menuHorizontal";
+import MenuHorizontal from "@/componentes/MenuHorizontal";
 import MenuVertical from "@/componentes/MenuVertical";
 import TeladeLogin from "@/componentes/TeladeLogin";
 

@@ -1,27 +1,28 @@
 export default function TeladeLogin(){
     return(
     <div className="space-y-6 font-mono h-screen flex justify-center items-center">
-        <div className= "bg-white text-black w-80">
+        <div className= "bg-gray-900 text-white w-90 p-8 rounded-lg">
             
-            <div className="">
-                <h4 className="font-bold">Login</h4>
+            <div className="flex items-center justify-center pb-3">
+                <h1 className="font-bold">LOGIN</h1>
             </div>
 
-            <form className="">
+            <form className="font-sans">
                 <div>
-                    <div className="">Email</div>
-                    <input type="text"></input>
+                    <div className="pb-1">E-mail</div>
+                    <input type="text" className="border border-gray-600 rounded-md placeholder-gray-500 w-73 p-1" placeholder="Digite seu e-mail"></input>
                 </div>
 
-                <div>
-                    <div className="">Senha</div>
-                    <input type="password"></input>
+                <div className="pt-5">
+                    <div className="pb-1">Senha</div>
+                    <input type="password" className="border border-gray-600 rounded-md placeholder-gray-500 w-73 p-1" placeholder="Digite sua senha"></input>
                 </div>
             </form>
             
-            <button>Entrar</button>
-            <p>Ainda não tem conta?Cadastre-se</p>
-        
+            <div className="flex items-center justify-center pt-2">
+                <button className="rounded-full font-bold bg-green-800 hover:bg-green-900 text-white px-30">Entrar</button>
+            </div>
+                <p className="text-sm flex items-center justify-center">Ainda não tem conta?<a className="text-green-800 p-0.5" target="_blank" href="https://www.instagram.com/p/DFFbU4yOcp8/?img_index=2">Cadastre-se</a></p>
         </div>
     </div>
     );
