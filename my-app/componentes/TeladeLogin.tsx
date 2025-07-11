@@ -26,6 +26,12 @@ export default function TeladeLogin(){
                 <p className="text-sm flex items-center justify-center">Ainda não tem conta?<a className="text-green-800 font-bold ml-1.5" target="_blank" href="https://www.instagram.com/p/DFFbU4yOcp8/?img_index=2">Cadastre-se</a></p>
             </div>
         </div>
+
+        <div>
+            <footer className="absolute inset-x-0 bottom-0 border-0 bg-gray-800 text-center p-1.5">
+                <h1>© 2025 - Todos os direitos reservados.</h1>
+            </footer>
+        </div>
     </div>
     );
 }
