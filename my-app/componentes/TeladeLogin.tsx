@@ -22,7 +22,7 @@ export default function TeladeLogin(){
             <div className="flex items-center justify-center pt-5">
                 <button className="rounded-full font-bold bg-green-800 hover:bg-green-900 text-white px-30 h-8">Entrar</button>
             </div>
-            <div className="pt-1.5">
+            <div className="pt-2">
                 <p className="text-sm flex items-center justify-center">Ainda não tem conta?<a className="text-green-800 font-bold ml-1.5" target="_blank" href="https://www.instagram.com/p/DFFbU4yOcp8/?img_index=2">Cadastre-se</a></p>
             </div>
         </div>
