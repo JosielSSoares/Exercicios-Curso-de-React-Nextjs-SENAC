@@ -3,7 +3,7 @@
 import MenuHorizontal from "@/componentes/MenuHorizontal";
 import MenuVertical from "@/componentes/MenuVertical";
 import TeladeLogin from "@/componentes/TeladeLogin";
-import Buttom from "@/componentes/Buttom";
+import AreaUsuario from "@/componentes/AreaUsuario";
 import { Children } from "react";
 import {Component} from "react";
 import Header from "@/componentes/Header";
@@ -11,17 +11,38 @@ import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
 
 
+
+// function Componente({children}: {children: React.ReactNode}){
+//   return(
+//     <div>
+//         {children}
+//     </div>
+//   )
+// }
+
+function acao(){
+  alert ("Sucesso")
+}
+
 export default function Index() {
+
   return (
     <div>
 
-      <Header/>
+    <AreaUsuario
+      titulo="Área do Usuário"
+      botao="Executar Ação"
+      funcao={acao}
+    >
+    <p>Bem vindo ao sistema</p>
+    </AreaUsuario>
+     
+      {/* <Header/>
       <Card/>
       <div className="absolute inset-x-0 bottom-0">
         <Footer/>
-      </div>
-      
-      
+      </div> */}
+
     </div>
   );
 }
