@@ -9,6 +9,7 @@ import { Component } from "react";
 import Header from "@/componentes/Header";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
+import Usuarios from "@/componentes/Usuarios";
 
 
 
@@ -28,13 +29,41 @@ export default function Index() {
 
   return (
     <div>
+      <div className="flex space-x-5">
+        <div>
+          <MenuVertical/>
+        </div>
 
-      <AreaUsuario
+        <div className="flex flex-col py-1 space-y-1 w-screen">
+          <Usuarios 
+          titulo="Alice"
+          email= "alice@gmail.com"
+          botao="Saiba mais"
+          funcao={acao}
+          ></Usuarios>
+
+          <Usuarios
+          titulo="Bruno"
+          email= "bruno@gmail.com"
+          botao="Saiba mais"
+          funcao={acao}
+          ></Usuarios>
+
+          <Usuarios
+          titulo="Kevin"
+          email= "Kevin@gmail.com"
+          botao="Saiba mais"
+          funcao={acao}
+          ></Usuarios>
+        </div>
+      </div>
+
+      {/* <AreaUsuario
         titulo="Área do Usuário"
         botao="Executar Ação"
         funcao={acao}
       ><p>Bem vindo ao sistema</p>
-      </AreaUsuario>
+      </AreaUsuario> */}
       {/* <AreaUsuario
         titulo="Área do Usuário"
         botao="Executar Ação"
