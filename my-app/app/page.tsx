@@ -6,22 +6,22 @@ import TeladeLogin from "@/componentes/TeladeLogin";
 import Buttom from "@/componentes/Buttom";
 import { Children } from "react";
 import {Component} from "react";
-
-
-
-function helloworld(){
-  console.log("olá");
-}
+import Header from "@/componentes/Header";
+import Card from "@/componentes/Card";
+import Footer from "@/componentes/Footer";
 
 
 export default function Index() {
   return (
     <div>
-      {/* <MenuVertical/>
-      <MenuHorizontal/> */}
-      {/* <TeladeLogin/> */}
 
-      <Buttom color={"vermelho"} titulo= {"Olá mundo"} subtitulo={"Bem vindo"} funcao ={helloworld}></Buttom>
+      <Header/>
+      <Card/>
+      <div className="absolute inset-x-0 bottom-0">
+        <Footer/>
+      </div>
+      
+      
     </div>
   );
 }
