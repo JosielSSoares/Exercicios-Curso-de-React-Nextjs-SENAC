@@ -4,13 +4,12 @@ import MenuHorizontal from "@/componentes/MenuHorizontal";
 import MenuVertical from "@/componentes/MenuVertical";
 import TeladeLogin from "@/componentes/TeladeLogin";
 import AreaUsuario from "@/componentes/AreaUsuario";
-import { Children } from "react";
+import { Children, useState } from "react";
 import { Component } from "react";
 import Header from "@/componentes/Header";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
 import Usuarios from "@/componentes/Usuarios";
-
 
 
 // function Componente({children}: {children: React.ReactNode}){
@@ -27,9 +26,18 @@ function acao() {
 
 export default function Index() {
 
+  const [contador, setContador] = useState(0);
+
+  function Incrementar(){
+    setContador (contador + 1);
+  }
+
+  function Decrementar(){
+    setContador (contador - 1 )
+  }
   return (
     <div>
-      <div className="flex space-x-5">
+      {/* <div className="flex space-x-5">
         <div>
           <MenuVertical/>
         </div>
@@ -56,14 +64,15 @@ export default function Index() {
           funcao={acao}
           ></Usuarios>
         </div>
-      </div>
+      </div> */}
 
-      {/* <AreaUsuario
+      <AreaUsuario
         titulo="Área do Usuário"
-        botao="Executar Ação"
-        funcao={acao}
-      ><p>Bem vindo ao sistema</p>
-      </AreaUsuario> */}
+        botao=""
+        decrementar={Decrementar}
+      ><p>{contador}</p>
+        
+      </AreaUsuario>
       {/* <AreaUsuario
         titulo="Área do Usuário"
         botao="Executar Ação"
@@ -85,9 +94,8 @@ export default function Index() {
 
       {/* <Header/>
       <Card/>
-      <div className="absolute inset-x-0 bottom-0">
-        <Footer/>
-      </div> */}
+      <div className="absolute inset-x-0 bottom-0"> */}
+      <Footer/>
 
     </div>
   );
