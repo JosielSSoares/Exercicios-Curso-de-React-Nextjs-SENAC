@@ -55,5 +55,4 @@ export default function AreaUsuario({ titulo, children, botao, decrementar }: pr
 }
 
 
-{/* <button className={`p-3 rounded-lg cursor-pointer text-white`}>{titulo}</button> */ }
 

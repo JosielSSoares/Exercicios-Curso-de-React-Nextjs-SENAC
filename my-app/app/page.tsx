@@ -9,8 +9,8 @@ import { Component } from "react";
 import Header from "@/componentes/Header";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
-import Usuarios from "@/componentes/Usuarios";
-
+import nomeDeUsuário from "@/componentes/NomeDeUsuário";
+import NomeDeUsuário from "@/componentes/NomeDeUsuário";
 
 // function Componente({children}: {children: React.ReactNode}){
 //   return(
@@ -26,15 +26,15 @@ function acao() {
 
 export default function Index() {
 
-  const [contador, setContador] = useState(0);
+  // const [contador, setContador] = useState(0);
 
-  function Incrementar(){
-    setContador (contador + 1);
-  }
+  // function Incrementar(){
+  //   setContador (contador + 1);
+  // }
 
-  function Decrementar(){
-    setContador (contador - 1 )
-  }
+  // function Decrementar(){
+  //   setContador (contador - 1 )
+  // }
   return (
     <div>
       {/* <div className="flex space-x-5">
@@ -66,13 +66,13 @@ export default function Index() {
         </div>
       </div> */}
 
-      <AreaUsuario
+      {/* <AreaUsuario
         titulo="Área do Usuário"
         botao=""
         decrementar={Decrementar}
       ><p>{contador}</p>
         
-      </AreaUsuario>
+      </AreaUsuario> */}
       {/* <AreaUsuario
         titulo="Área do Usuário"
         botao="Executar Ação"
@@ -95,6 +95,7 @@ export default function Index() {
       {/* <Header/>
       <Card/>
       <div className="absolute inset-x-0 bottom-0"> */}
+      <NomeDeUsuário/>
       <Footer/>
 
     </div>
