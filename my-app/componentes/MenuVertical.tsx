@@ -11,10 +11,10 @@ export default function MenuVertical(){
         </div>
       </header>
 
-       {/* <div className="p-3 text-black">
+       <div className="p-3 text-black">
         <div className="font-bold pb-2">Bem-vindo!</div>
         <p className="text-xs">Esta é uma tela com um menu simples usando Tailwind CSS.</p>
-       </div> */}
+       </div>
 
     </div>
   );
