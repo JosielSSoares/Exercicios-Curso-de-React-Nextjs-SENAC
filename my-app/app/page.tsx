@@ -122,12 +122,12 @@ export default async function Index() {
 
         {/* Menu Lateral Esquerdo */}
         <header className="text-white bg-blue-600 rounded-tr-sm rounded-br-sm w-48 p-4 flex-shrink-0">
-          <div className="grid justify-items-start space-y-1">
-            <div className="p-3 hover:text-gray-900 font-bold w-full">Menu</div>
-            <div className="p-3 hover:text-gray-900 w-full">Início</div>
-            <div className="p-3 hover:text-gray-900 w-full">Perfil</div>
-            <div className="p-3 hover:text-gray-900 w-full">Configurações</div>
-            <div className="p-3 hover:text-gray-900 w-full">Sair</div>
+          <div className="grid justify-items-start space-y-1 fixed">
+            <div className="p-3 hover:text-gray-900 font-bold w-full text-3xl">Menu</div>
+            <div className="p-3 hover:text-gray-900 w-full font-semibold">Início</div>
+            <div className="p-3 hover:text-gray-900 w-full font-semibold">Perfil</div>
+            <div className="p-3 hover:text-gray-900 w-full font-semibold">Configurações</div>
+            <div className="p-3 hover:text-gray-900 w-full font-semibold">Sair</div>
           </div>
         </header>
 
@@ -141,20 +141,21 @@ export default async function Index() {
                   <img className="h-100" src={item.image}></img>
                 </div>
                 <div className="flex flex-col flex-grow">
-                  <p className="text-sm text-gray-800 mb-1"><b>ID:</b>{item.id}</p>
-                  <p className="text-xs text-gray-500 mb-1"><b>Categoria:</b>{item.category}</p>
-                  <h1 className="text-xl text-gray-950 font-semibold mb-2"><b>Título:</b>{item.title}</h1>
-                  <p className="text-lg font-bold text-green-700 mb-2"><b>Preço R$:</b>{item.price}</p>
+                  {/* <p className="text-sm text-gray-800 mb-1">{item.id}</p> */}
+                  <p className="text-xs text-gray-500 mb-1">{item.category}</p>
+                  <h1 className="text-xl text-gray-950 font-semibold mb-2">{item.title}</h1>
+                  <p className="text-lg font-semibold text-green-700 mb-2"><b>R$:</b>{item.price}</p>
                   <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
                 </div>
                 <div className="mt-auto">
-                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5">Ver mais</button>
+                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5 text-white hover:text-gray-900 hover:shadow-gray-800 shadow-md duration-200 font-semibold font-sans cursor-pointer">Ver mais</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
