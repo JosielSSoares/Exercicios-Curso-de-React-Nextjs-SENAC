@@ -3,7 +3,6 @@
 import MenuHorizontal from "@/componentes/MenuHorizontal";
 import MenuVertical from "@/componentes/MenuVertical";
 import TeladeLogin from "@/componentes/TeladeLogin";
-import AreaUsuario from "fetch('https://fakestoreapi.com/products/1')@/componentes/AreaUsuario";
 import { Children, useState } from "react";
 import { Component } from "react";
 import Header from "@/componentes/Header";
@@ -41,11 +40,9 @@ export default async function Index() {
   // const dados:userProps[] = await resposta.json();
   // console.log(dados)
 
+  await new Promise(resolve => setTimeout(resolve, 3000));
   const resposta = await fetch("https://fakestoreapi.com/products");
   const produtos: userProps[] = await resposta.json();
-  // console.log(produtos)
-
-
 
   // const [contador, setContador] = useState(0);
   // function Incrementar(){
@@ -69,19 +66,6 @@ export default async function Index() {
           funcao={acao}
           ></Usuarios>
 
-          <Usuarios
-          titulo="Bruno"
-          email= "bruno@gmail.com"
-          botao="Saiba mais"
-          funcao={acao}
-          ></Usuarios>
-
-          <Usuarios
-          titulo="Kevin"
-          email= "Kevin@gmail.com"
-          botao="Saiba mais"
-          funcao={acao}
-          ></Usuarios>
         </div>
       </div> */}
 
@@ -91,26 +75,6 @@ export default async function Index() {
         decrementar={Decrementar}
       ><p>{contador}</p>
         
-      </AreaUsuario> */}
-      {/* <AreaUsuario
-        titulo="Área do Usuário"
-        botao="Executar Ação"
-        funcao={acao}
-      >
-          <div className="bg-red-500">
-            <h1>hello world</h1>
-          </div>
-      </AreaUsuario>
-      <AreaUsuario
-        titulo="Área do Usuário"
-        botao="Executar Ação"
-        funcao={acao}
-      >
-          <div className="bg-amber-900">
-            <h1>ola mundo</h1>
-          </div>
-      </AreaUsuario> */}
-
       {/* <Header/>
       <Card/>
       <div className="absolute inset-x-0 bottom-0"> */}
@@ -118,10 +82,10 @@ export default async function Index() {
       <Footer/> */}
 
       {/* Container principal que organiza o menu lateral e o conteúdo da página */}
-      <div className="flex min-h-screen"> {/* Usamos 'min-h-screen' para garantir que o container ocupe a altura mínima da tela */}
+      <div> {/* Usamos 'min-h-screen' para garantir que o container ocupe a altura mínima da tela */}
 
         {/* Menu Lateral Esquerdo */}
-        <header className="text-white bg-blue-600 rounded-tr-sm rounded-br-sm w-48 p-4 flex-shrink-0">
+        {/* <header className="text-white bg-blue-600 rounded-tr-sm rounded-br-sm w-48 p-4 flex-shrink-0">
           <div className="grid justify-items-start space-y-1 fixed">
             <div className="p-3 hover:text-gray-900 font-bold w-full text-3xl">Menu</div>
             <div className="p-3 hover:text-gray-900 w-full font-semibold">Início</div>
@@ -129,7 +93,7 @@ export default async function Index() {
             <div className="p-3 hover:text-gray-900 w-full font-semibold">Configurações</div>
             <div className="p-3 hover:text-gray-900 w-full font-semibold">Sair</div>
           </div>
-        </header>
+        </header> */}
 
         {/* Área de Conteúdo Principal (Itens da API) */}
         <div className="p-4 bg-gray-300">
@@ -155,7 +119,6 @@ export default async function Index() {
           </div>
         </div>
       </div>
-      <Footer/>
     </div>
   )
 }
