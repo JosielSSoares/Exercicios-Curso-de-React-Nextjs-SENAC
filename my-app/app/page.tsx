@@ -132,23 +132,24 @@ export default async function Index() {
         </header>
 
         {/* Área de Conteúdo Principal (Itens da API) */}
-        <div className="flex-grow p-4 bg-gray-300">
+        <div className="p-4 bg-gray-300">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">
             {/* O loop 'produtos.map' deve envolver este bloco */}
             {produtos.map((item) => (
-              <div key={item.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col h-full">
-                <ul className="flex-grow">
-                  <li className="">
-                    <div className="justify-center justify-items-center items-center">
-                    <img className="h-100" src={item.image}></img></div>
-                    <p className="text-sm text-gray-800 mb-1"><b>ID:</b>{item.id}</p>
-                    <p className="text-xs text-gray-500 mb-1"><b>Categoria:</b>{item.category}</p>
-                    <h1 className="text-xl text-gray-950 font-semibold mb-2"><b>Título:</b>{item.title}</h1>
-                    <p className="text-lg font-bold text-green-700 mb-2"><b>Preço R$:</b>{item.price}</p>
-                    <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
-                    <button className="bg-blue-500 rounded-lg text-center w-full p-2.5">Ver mais</button>    
-                  </li>
-                </ul>
+              <div key={item.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col flex-grow h-full">
+                <div className=" flex justify-center items-center mb-3">
+                  <img className="h-100" src={item.image}></img>
+                </div>
+                <div className="flex flex-col flex-grow">
+                  <p className="text-sm text-gray-800 mb-1"><b>ID:</b>{item.id}</p>
+                  <p className="text-xs text-gray-500 mb-1"><b>Categoria:</b>{item.category}</p>
+                  <h1 className="text-xl text-gray-950 font-semibold mb-2"><b>Título:</b>{item.title}</h1>
+                  <p className="text-lg font-bold text-green-700 mb-2"><b>Preço R$:</b>{item.price}</p>
+                  <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
+                </div>
+                <div className="mt-auto">
+                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5">Ver mais</button>
+                </div>
               </div>
             ))}
           </div>
