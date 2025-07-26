@@ -53,30 +53,3 @@ export default function AreaUsuario({ titulo, children, botao, decrementar }: pr
         </div>
     );
 }
-
-<div key={item.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col h-full">
-  {/* A imagem pode ficar diretamente aqui ou em um div para centralizá-la, mas não precisa ser um flex-grow principal */}
-  <div className="flex justify-center items-center mb-4"> {/* Adicione mb-4 para dar um espaçamento abaixo da imagem */}
-    <img className="max-h-40 object-contain" src={item.image} alt={item.title} /> {/* max-h-40 para controlar a altura da imagem e object-contain para evitar distorção */}
-  </div>
-
-  {/* Este div agora será o flex-grow principal para todo o conteúdo que deve empurrar o botão para baixo */}
-  <div className="flex flex-col flex-grow">
-    <p className="text-sm text-gray-800 mb-1"><b>ID:</b>{item.id}</p>
-    <p className="text-xs text-gray-500 mb-1"><b>Categoria:</b>{item.category}</p>
-    <h1 className="text-xl text-gray-950 font-semibold mb-2"><b>Título:</b>{item.title}</h1>
-    <p className="text-lg font-bold text-green-700 mb-2"><b>Preço R$:</b>{item.price}</p>
-    {/* A descrição deve ter flex-grow se você quiser que ela preencha o espaço restante e empurre o botão */}
-    <p className="text-sm text-gray-700 mb-2 line-clamp-3 flex-grow"><b>Descrição:</b>{item.description}</p>
-
-    {/* O botão (ou seu contêiner) precisa ter mt-auto para ser empurrado para o final */}
-    <div className="mt-auto"> {/* Este div agirá como o empurrador */}
-      <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-center w-full p-2.5">
-        Ver mais
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
