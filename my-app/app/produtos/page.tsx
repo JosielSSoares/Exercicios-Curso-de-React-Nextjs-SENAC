@@ -1,31 +1,8 @@
 "use client"
 
-import MenuHorizontal from "@/componentes/MenuHorizontal";
-import MenuVertical from "@/componentes/MenuVertical";
-import TeladeLogin from "@/componentes/TeladeLogin";
-import AreaUsuario from "fetch('https://fakestoreapi.com/products/1')@/componentes/AreaUsuario";
-import { Children, useState } from "react";
-import { Component } from "react";
-import Header from "@/componentes/Header";
-import Card from "@/componentes/Card";
-import Footer from "@/componentes/Footer";
-import nomeDeUsuário from "@/componentes/NomeDeUsuário";
-import NomeDeUsuário from "@/componentes/NomeDeUsuário";
-import { useEffect } from "react";
+import Link from "next/link";
 
-// function Componente({children}: {children: React.ReactNode}){
-//   return(
-//     <div>
-//         {children}
-//     </div>
-//   )
-// }
-
-// function acao() {
-//   alert("Sucesso")
-// }
 type userProps = {
-
 
   id: number,
   title: string,
@@ -36,10 +13,6 @@ type userProps = {
 }
 
 export default async function Index() {
-
-  // const resposta = await fetch("https://jsonplaceholder.typicode.com/users")
-  // const dados:userProps[] = await resposta.json();
-  // console.log(dados)
 
   const resposta = await fetch("https://fakestoreapi.com/products");
   const produtos: userProps[] = await resposta.json();
@@ -56,61 +29,6 @@ export default async function Index() {
   // }
   return (
     <div>
-      {/* <div className="flex space-x-5">
-        <div>
-          <MenuVertical/>
-        </div>
-
-        <div className="flex flex-col py-1 space-y-1 w-screen">
-          <Usuarios 
-          titulo="Alice"
-          email= "alice@gmail.com"
-          botao="Saiba mais"
-          funcao={acao}
-          ></Usuarios>
-
-          <Usuarios
-          titulo="Bruno"
-          email= "bruno@gmail.com"
-          botao="Saiba mais"
-          funcao={acao}
-          ></Usuarios>
-
-          <Usuarios
-          titulo="Kevin"
-          email= "Kevin@gmail.com"
-          botao="Saiba mais"
-          funcao={acao}
-          ></Usuarios>
-        </div>
-      </div> */}
-
-      {/* <AreaUsuario
-        titulo="Área do Usuário"
-        botao=""
-        decrementar={Decrementar}
-      ><p>{contador}</p>
-        
-      </AreaUsuario> */}
-      {/* <AreaUsuario
-        titulo="Área do Usuário"
-        botao="Executar Ação"
-        funcao={acao}
-      >
-          <div className="bg-red-500">
-            <h1>hello world</h1>
-          </div>
-      </AreaUsuario>
-      <AreaUsuario
-        titulo="Área do Usuário"
-        botao="Executar Ação"
-        funcao={acao}
-      >
-          <div className="bg-amber-900">
-            <h1>ola mundo</h1>
-          </div>
-      </AreaUsuario> */}
-
       {/* <Header/>
       <Card/>
       <div className="absolute inset-x-0 bottom-0"> */}
@@ -148,7 +66,7 @@ export default async function Index() {
                   <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
                 </div>
                 <div className="mt-auto">
-                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5">Ver mais</button>
+                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5"> <Link href={""}></Link>Ver mais</button>
                 </div>
               </div>
             ))}
