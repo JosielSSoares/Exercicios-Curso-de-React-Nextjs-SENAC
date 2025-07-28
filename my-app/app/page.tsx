@@ -1,15 +1,11 @@
-"use client"
 
-import MenuHorizontal from "@/componentes/MenuHorizontal";
+
 import MenuVertical from "@/componentes/MenuVertical";
-import TeladeLogin from "@/componentes/TeladeLogin";
 import { Children, useState } from "react";
 import { Component } from "react";
 import Header from "@/componentes/Header";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
-import nomeDeUsuário from "@/componentes/NomeDeUsuário";
-import NomeDeUsuário from "@/componentes/NomeDeUsuário";
 import { useEffect } from "react";
 
 // function Componente({children}: {children: React.ReactNode}){
@@ -78,8 +74,6 @@ export default async function Index() {
       {/* <Header/>
       <Card/>
       <div className="absolute inset-x-0 bottom-0"> */}
-      {/* <NomeDeUsuário/>
-      <Footer/> */}
 
       {/* Container principal que organiza o menu lateral e o conteúdo da página */}
       <div> {/* Usamos 'min-h-screen' para garantir que o container ocupe a altura mínima da tela */}
