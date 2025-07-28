@@ -7,6 +7,7 @@ import Header from "@/componentes/Header";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
 import { useEffect } from "react";
+import Link from "next/link";
 
 // function Componente({children}: {children: React.ReactNode}){
 //   return(
@@ -106,7 +107,9 @@ export default async function Index() {
                   <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
                 </div>
                 <div className="mt-auto">
-                  <button className="bg-blue-500 rounded-lg text-center w-full p-2.5 text-white hover:text-gray-900 hover:shadow-gray-800 shadow-md duration-200 font-semibold font-sans cursor-pointer">Ver mais</button>
+                  <Link href={`/produtos/${item.id}`}>
+                    <button className="bg-blue-500 rounded-lg text-center w-full p-2.5 text-white hover:text-gray-900 hover:shadow-gray-800 shadow-md duration-200 font-semibold font-sans cursor-pointer">Ver mais</button>
+                  </Link>
                 </div>
               </div>
             ))}
