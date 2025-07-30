@@ -22,8 +22,8 @@ export default async function ProdutosDetalhes({ params }: { params: { id: strin
     const produto: userProps = await resposta.json();
 
     return (
-        <div className="p-4 bg-gray-300">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">
+        <div className="p-15 bg-gray-300">
+            <div className="flex justify-center items-center">
                 {/* O loop 'produtos.map' deve envolver este bloco */}
                     <div key={produto.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col flex-grow h-full">
                         <div className=" flex justify-center items-center mb-3">
