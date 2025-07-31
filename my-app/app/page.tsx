@@ -37,7 +37,7 @@ export default async function Index() {
   // const dados:userProps[] = await resposta.json();
   // console.log(dados)
 
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 1500));
   const resposta = await fetch("https://fakestoreapi.com/products");
   const produtos: userProps[] = await resposta.json();
 
@@ -95,18 +95,18 @@ export default async function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">
             {/* O loop 'produtos.map' deve envolver este bloco */}
             {produtos.map((item) => (
-              <div key={item.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col flex-grow h-full">
+              <div key={item.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-3 flex flex-col justify-center items-center h-full">
                 <div className=" flex justify-center items-center mb-3">
-                  <img className="h-100" src={item.image}></img>
+                  <img className="max-w-45 max-h-45" src={item.image}></img>
                 </div>
-                <div className="flex flex-col flex-grow">
+                <div className="flex flex-col">
                   {/* <p className="text-sm text-gray-800 mb-1">{item.id}</p> */}
                   <h1 className="text-xl text-gray-950 font-semibold mb-2">{item.title}</h1>
                   <p className="text-xs text-gray-500 mb-1">{item.category}</p>
                   <p className="text-lg font-semibold text-green-700 mb-2"><b>$:</b>{item.price}</p>
                   <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição: </b>{item.description}</p>
                 </div>
-                <div className="mt-auto">
+                <div className="w-full h-auto">
                   <Link href={`/produtos/${item.id}`}>
                     <button className="bg-blue-500 rounded-lg text-center w-full p-2.5 text-white hover:text-gray-900 hover:shadow-gray-800 shadow-md duration-200 font-semibold font-sans cursor-pointer">Ver mais</button>
                   </Link>
