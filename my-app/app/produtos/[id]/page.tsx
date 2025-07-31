@@ -24,7 +24,6 @@ export default async function ProdutosDetalhes({ params }: { params: { id: strin
     return (
         <div className="p-15 bg-gray-300 w-full">
             <div className="flex justify-center items-center">
-                {/* O loop 'produtos.map' deve envolver este bloco */}
                     <div key={produto.id} className="bg-white rounded-3xl shadow-md overflow-hidden p-4 flex flex-col flex-grow h-full">
                         <div className=" flex justify-center items-center mb-3">
                             <img className="h-100" src={produto.image}></img>
