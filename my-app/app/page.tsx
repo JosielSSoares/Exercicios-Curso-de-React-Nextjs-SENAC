@@ -37,7 +37,7 @@ export default async function Index() {
   // const dados:userProps[] = await resposta.json();
   // console.log(dados)
 
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  await new Promise(resolve => setTimeout(resolve, 2000));
   const resposta = await fetch("https://fakestoreapi.com/products");
   const produtos: userProps[] = await resposta.json();
 
@@ -101,10 +101,10 @@ export default async function Index() {
                 </div>
                 <div className="flex flex-col flex-grow">
                   {/* <p className="text-sm text-gray-800 mb-1">{item.id}</p> */}
-                  <p className="text-xs text-gray-500 mb-1">{item.category}</p>
                   <h1 className="text-xl text-gray-950 font-semibold mb-2">{item.title}</h1>
-                  <p className="text-lg font-semibold text-green-700 mb-2"><b>R$:</b>{item.price}</p>
-                  <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição:</b>{item.description}</p>
+                  <p className="text-xs text-gray-500 mb-1">{item.category}</p>
+                  <p className="text-lg font-semibold text-green-700 mb-2"><b>$:</b>{item.price}</p>
+                  <p className="text-sm text-gray-700 mb-2 line-clamp-3"><b>Descrição: </b>{item.description}</p>
                 </div>
                 <div className="mt-auto">
                   <Link href={`/produtos/${item.id}`}>
