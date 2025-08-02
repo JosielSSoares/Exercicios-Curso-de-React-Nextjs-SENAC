@@ -42,7 +42,7 @@ export default async function Index() {
   // const resposta = await fetch("https://fakestoreapi.com/products");
   // const produtos: userProps[] = await resposta.json();
 
-  const respota = await fetch(`${process.env.API_ROUTE}/api/users`)
+  const respota = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/users`)
   const dados: userProps [] = await respota.json();
   
   // const [contador, setContador] = useState(0);
@@ -86,6 +86,7 @@ export default async function Index() {
         {dados.map((item) => (
           <div key={item.id}>
             <h1>Nome:{item.name} Email:{item.email}</h1>
+            <Link href={`/editarUsuario/${item.id}`}><button>Editar</button></Link>
           </div>
         ))}
 
