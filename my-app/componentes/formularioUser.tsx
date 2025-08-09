@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react"
 
 export default function FormularioUser( {id, nome="", email=""}:userProps){
-    const [UserID, setUserID] = useState<number | undefined>()
+    const [UserID, setUserID] = useState<number | undefined>(id)
     const [userNome,  setUserNome] = useState(nome);
     const [userEmail, setUserEmail] = useState(email);
     const rota = useRouter();

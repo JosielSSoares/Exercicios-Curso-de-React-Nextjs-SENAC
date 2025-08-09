@@ -8,7 +8,3 @@ export async function Salvar(form: userProps, metodo: string) {
         body: JSON.stringify(form)
     })
 }
-
-export async function Deletar() {
-    
-}
