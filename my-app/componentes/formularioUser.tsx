@@ -10,7 +10,7 @@ export default function FormularioUser( {id, name="", email=""}:userProps){
     const [userEmail, setEmail] = useState(email);
     const rota = useRouter();
 
-     async function Salvar(event: React.FormEvent<HTMLFormElement>) {
+    async function Salvar(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         const formulario = {
@@ -19,20 +19,24 @@ export default function FormularioUser( {id, name="", email=""}:userProps){
             email: userEmail
         }
 
-        const metodo = UserID ? "PUT" : "POST"
+        try {
+            const metodo = UserID ? "PUT" : "POST"
+            const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`,{
+                method: metodo,
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(formulario)
+            })
 
-        const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/users`,{
-            method: metodo,
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(formulario)
-        })
-        alert("Cadastrado com Sucesso");
-        const dados: userProps[] = await resposta.json()
-            if(dados){
-        rota.push("/");
+            alert("Cadastrado com Sucesso");
+            const dados: userProps[] = await resposta.json()
+                if(dados){
+            rota.push("/");
+            }
+            
+        } catch (error) {
+            console.log("PUT ou POST não executado")
         }
-
-     }
+    }
 
     return(
         <div>

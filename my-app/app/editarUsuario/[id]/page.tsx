@@ -3,7 +3,7 @@ import FormularioUser from "@/componentes/formularioUser";
 export default async function EditarUsuario({params}: {params: Promise<{id: string}>}){
 
     const {id} = await params
-    const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/usuarios/${id}`)
+    const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios/${id}`)
     const dados = await resposta.json();
 
     console.log(dados)

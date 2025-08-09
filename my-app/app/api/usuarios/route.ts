@@ -21,7 +21,7 @@ export async function POST (request: Request){
 
     try{
         const {name, email} = await request.json();
-        const [result] = await db.query("INSERT INTO usuarios (name, email) VALUES (?,?)",[name,email])
+        const [result] = await db.query<any>("INSERT INTO usuarios (name, email) VALUES (?,?)",[name,email])
         return new Response(JSON.stringify(result),{
         status: 201,
         headers: {'Content-Type':'application/json'}
