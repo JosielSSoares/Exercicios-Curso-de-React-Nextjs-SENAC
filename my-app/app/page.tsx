@@ -42,7 +42,7 @@ export default async function Index() {
   // const resposta = await fetch("https://fakestoreapi.com/products");
   // const produtos: userProps[] = await resposta.json();
 
-  const respota = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/users`)
+  const respota = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`)
   const dados: userProps [] = await respota.json();
   
   // const [contador, setContador] = useState(0);
