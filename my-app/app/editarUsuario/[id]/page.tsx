@@ -11,7 +11,7 @@ export default async function EditarUsuario({params}: {params: Promise<{id: stri
 
     return(
         <div>
-            <FormularioUser id={usuarios.id} name={usuarios.name} email={usuarios.email}/>
+            <FormularioUser id={usuarios.id} nome={usuarios.nome} email={usuarios.email}/>
         </div>
     )
 

@@ -85,7 +85,7 @@ export default async function Index() {
         <Link href={"/cadastro"} ><button className="bg-blue-500 rounded-lg">Cadastrar Usuário</button></Link>
         {dados.map((item) => (
           <div key={item.id}>
-            <h1>Nome:{item.name} Email:{item.email}</h1>
+            <h1>Nome:{item.nome} Email:{item.email}</h1>
             <Link href={`/editarUsuario/${item.id}`}><button>Editar</button></Link>
           </div>
         ))}

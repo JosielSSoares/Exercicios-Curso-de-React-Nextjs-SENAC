@@ -20,8 +20,8 @@ export async function GET (){
 export async function POST (request: Request){
 
     try{
-        const {name, email} = await request.json();
-        const [result] = await db.query<any>("INSERT INTO usuarios (name, email) VALUES (?,?)",[name,email])
+        const {nome, email} = await request.json();
+        const [result] = await db.query<any>("INSERT INTO usuarios (nome, email) VALUES (?,?)",[nome,email])
         return new Response(JSON.stringify(result),{
         status: 201,
         headers: {'Content-Type':'application/json'}
@@ -33,11 +33,11 @@ export async function POST (request: Request){
     )}
 }
 
-export async function PUT (resquest: Request, {params}: {params: Promise<{id: string}>}){
+export async function PUT (request: Request, {params}: {params: Promise<{id: string}>}){
     
     try{
-        const {id, name, email} = await resquest.json();
-        await db.query("UPDATE usuarios SET name=?, email=? where id=?",{name, email} )
+        const {id, nome, email} = await request.json();
+        await db.query("UPDATE usuarios SET nome=?, email=? where id=?",{nome, email} )
         return new Response(JSON.stringify({value: true}))
 
     }catch(erro){
@@ -46,4 +46,11 @@ export async function PUT (resquest: Request, {params}: {params: Promise<{id: st
     )}
 }
 
-    
+export async function DELETE (request:Request){
+
+    const {id} = await request.json();
+    await db.query("DELETE FROM usuarios WHERE id = ?", {id})
+    return Response.json({sucesso: true})
+}
+
+
