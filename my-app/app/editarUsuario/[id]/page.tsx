@@ -1,16 +1,17 @@
 import FormularioUser from "@/componentes/formularioUser";
+import { userProps } from "@/tipos";
 
 export default async function EditarUsuario({params}: {params: Promise<{id: string}>}){
 
     const {id} = await params
     const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios/${id}`)
-    const dados = await resposta.json();
+    const usuarios: userProps = await resposta.json();
 
-    console.log(dados)
+    console.log(usuarios)
 
     return(
         <div>
-            <FormularioUser id={dados.id} name={dados.name} email={dados.email}/>
+            <FormularioUser id={usuarios.id} name={usuarios.name} email={usuarios.email}/>
         </div>
     )
 

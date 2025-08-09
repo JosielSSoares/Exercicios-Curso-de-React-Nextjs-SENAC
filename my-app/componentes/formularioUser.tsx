@@ -18,7 +18,7 @@ export default function FormularioUser( {id, name="", email=""}:userProps){
             name: nome,
             email: userEmail
         }
-
+        
         try {
             const metodo = UserID ? "PUT" : "POST"
             const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`,{
