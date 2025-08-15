@@ -43,8 +43,8 @@ export default async function Index() {
   // const produtos: userProps[] = await resposta.json();
 
   const respota = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`)
-  const dados: userProps [] = await respota.json();
-  
+  const dados: userProps[] = await respota.json();
+
   // const [contador, setContador] = useState(0);
   // function Incrementar(){
   //   setContador (contador + 1);
@@ -83,12 +83,18 @@ export default async function Index() {
       {/* Container principal que organiza o menu lateral e o conteúdo da página */}
       <div>
         <Link href={"/cadastro"} ><button className="bg-blue-500 rounded-lg">Cadastrar Usuário</button></Link>
-        {dados.map((item) => (
-          <div key={item.id}>
-            <h1>Nome:{item.nome} Email:{item.email}</h1>
-            <Link href={`/editarUsuario/${item.id}`}><button>Editar</button></Link>
-          </div>
-        ))}
+        {Array.isArray(dados) && dados.length > 0 ? (
+          dados.map((item) => (
+            <div key={item.id} className="border p-4 my-2 rounded-md">
+              <h1 className="text-lg"><b>Nome:</b> {item.nome} | <b>Email:</b> {item.email}</h1>
+              <Link href={`/editarUsuario/${item.id}`}>
+                <button className="bg-yellow-500 text-white px-3 py-1 mt-2 rounded-md">Editar</button>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>Nenhum usuário cadastrado.</p>
+        )}
 
         {/* Área de Conteúdo Principal (Itens da API) */}
         {/* <div className="p-4 bg-gray-300">
