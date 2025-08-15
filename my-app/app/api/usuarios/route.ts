@@ -37,7 +37,7 @@ export async function PUT (request: Request, {params}: {params: Promise<{id: str
     
     try{
         const {id, nome, email} = await request.json();
-        await db.query("UPDATE usuarios SET nome=?, email=? where id=?",[id, nome, email] )
+        await db.query("UPDATE usuarios SET nome=?, email=? where id=?",[nome, email, id] )
         return new Response(JSON.stringify({value: true}))
 
     }catch(erro){
