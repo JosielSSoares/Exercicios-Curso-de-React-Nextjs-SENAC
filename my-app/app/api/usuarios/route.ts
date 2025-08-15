@@ -37,7 +37,7 @@ export async function PUT (request: Request, {params}: {params: Promise<{id: str
     
     try{
         const {id, nome, email} = await request.json();
-        await db.query("UPDATE usuarios SET nome=?, email=? where id=?",{nome, email} )
+        await db.query("UPDATE usuarios SET nome=?, email=? where id=?",[id, nome, email] )
         return new Response(JSON.stringify({value: true}))
 
     }catch(erro){
@@ -49,7 +49,7 @@ export async function PUT (request: Request, {params}: {params: Promise<{id: str
 export async function DELETE (request:Request){
 
     const {id} = await request.json();
-    await db.query("DELETE FROM usuarios WHERE id = ?", {id})
+    await db.query("DELETE FROM usuarios WHERE id = ?", [id])
     return Response.json({sucesso: true})
 }
 
