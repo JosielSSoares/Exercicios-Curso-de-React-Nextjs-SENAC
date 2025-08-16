@@ -11,8 +11,8 @@ export async function GET (){
         }else{
             return new Response(JSON.stringify({erro:"Usuario não encontrado"}))
         }
-    }catch (erro) {
-        return new Response(JSON.stringify({erro: erro}), 
+    }catch (error) {
+        return new Response(JSON.stringify({erro: error}), 
         {status: 500}
     )}
 }
@@ -27,8 +27,8 @@ export async function POST (request: Request){
         headers: {'Content-Type':'application/json'}
         })
 
-    }catch (erro) {
-        return new Response(JSON.stringify({erro: erro}), 
+    }catch (error) {
+        return new Response(JSON.stringify({erro: error}), 
         {status: 500}
     )}
 }
@@ -40,17 +40,30 @@ export async function PUT (request: Request, {params}: {params: Promise<{id: str
         await db.query("UPDATE usuarios SET nome=?, email=? where id=?",[nome, email, id] )
         return new Response(JSON.stringify({value: true}))
 
-    }catch(erro){
-        return new Response(JSON.stringify({erro:erro}),
+    }catch(error){
+        return new Response(JSON.stringify({erro:error}),
         {status: 500}   
     )}
 }
 
 export async function DELETE (request:Request){
 
-    const {id} = await request.json();
-    await db.query("DELETE FROM usuarios WHERE id = ?", [id])
-    return Response.json({sucesso: true})
+    try {
+
+        const {id} = await request.json();
+        await db.query("DELETE FROM usuarios WHERE id = ?", [id])
+        if(id){
+            
+            return Response.json({sucesso: true})
+            
+        }else{
+            alert("Falha ao deletar usuario")
+        }
+        
+    } catch (error) {
+        return new Response(JSON.stringify({erro: error}), 
+        {status: 500}
+    )}
 }
 
 
