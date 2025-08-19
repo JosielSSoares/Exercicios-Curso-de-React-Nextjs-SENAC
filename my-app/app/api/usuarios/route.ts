@@ -26,6 +26,7 @@ export async function POST (request: Request){
         status: 201,
         headers: {'Content-Type':'application/json'}
         })
+        
 
     }catch (error) {
         return new Response(JSON.stringify({erro: error}), 
@@ -39,6 +40,7 @@ export async function PUT (request: Request, {params}: {params: Promise<{id: str
         const {id, nome, email} = await request.json();
         await db.query("UPDATE usuarios SET nome=?, email=? where id=?",[nome, email, id] )
         return new Response(JSON.stringify({value: true}))
+        
 
     }catch(error){
         return new Response(JSON.stringify({erro:error}),

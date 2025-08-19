@@ -27,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-      <div className="flex min-h-screen">
+      {/* <div className="flex min-h-screen">
         <MenuVertical/>
+      </div> */}
+      <div>
         {children}
        </div> 
         <Footer/>

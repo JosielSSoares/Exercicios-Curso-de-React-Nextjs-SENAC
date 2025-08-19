@@ -80,8 +80,51 @@ export default async function Index() {
       <Card/>
       <div className="absolute inset-x-0 bottom-0"> */}
 
-      {/* Container principal que organiza o menu lateral e o conteúdo da página */}
-      <div>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+
+        {/* 2. CONTAINER INTERNO: Agrupa todo o seu conteúdo em um único bloco. */}
+        <div className="w-full max-w-lg p-6 bg-white rounded-xl shadow-md">
+
+          {/* Botão de Cadastrar posicionado no topo do bloco */}
+          <div className="mb-6">
+            <Link href={"/cadastro"}>
+              <button className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Cadastrar Novo Usuário</button>
+            </Link>
+          </div>
+
+          {/* Mapeamento dos dados dos usuários */}
+          {Array.isArray(dados) && dados.length > 0 ? (
+            // Container para a lista, que adiciona um espaço entre cada usuário
+            <div className="space-y-4">
+              {dados.map((item) => (
+                // 3. CARD DO USUÁRIO: Usamos flex-col para empilhar as informações e o botão.
+                <div key={item.id} className="border p-4 rounded-md shadow-sm flex flex-col items-start">
+
+                  {/* Informações do usuário (Nome e Email) */}
+                  <div className="mb-3">
+                    <h1 className="text-lg text-black"><b>Nome:</b> {item.nome}</h1>
+                    <p className="text-md text-gray-600"><b>Email:</b> {item.email}</p>
+                  </div>
+
+                  {/* Botão de Editar, que agora fica corretamente abaixo */}
+                  <Link href={`/editarUsuario/${item.id}`}>
+                    <button className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition-colors">
+                      Editar
+                    </button>
+                  </Link>
+
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-500">Nenhum usuário cadastrado.</p>
+          )}
+
+        </div>
+      </div>
+
+      {/* Container principal que organiza o CRUD e o conteúdo da página */}
+      {/* <div className="flex justify-center items-center space-y-6 h-screen">
         <Link href={"/cadastro"} ><button className="bg-blue-500 rounded-lg">Cadastrar Usuário</button></Link>
         {Array.isArray(dados) && dados.length > 0 ? (
           dados.map((item) => (
@@ -94,10 +137,10 @@ export default async function Index() {
           ))
         ) : (
           <p>Nenhum usuário cadastrado.</p>
-        )}
+        )} */}
 
-        {/* Área de Conteúdo Principal (Itens da API) */}
-        {/* <div className="p-4 bg-gray-300">
+      {/* Área de Conteúdo Principal (Itens da API) */}
+      {/* <div className="p-4 bg-gray-300">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">
             
             {produtos.map((item) => (
@@ -121,7 +164,7 @@ export default async function Index() {
             ))}
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   )
 }
