@@ -1,5 +1,5 @@
 # Exercícios - Curso de React e Next.js (Senac)
-
+## OBS:Curso Concluído
 Este repositório contém os exercícios desenvolvidos ao longo do curso de **React e Next.js** oferecido pelo Senac.
 
 ##  Conteúdo
